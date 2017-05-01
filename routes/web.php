@@ -12,14 +12,19 @@
 */
 use Illuminate\Support\Facades\DB;
 
+
+
 Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth');
+    return view('izbornik');
+});
 
-Route::get('/test/{p1}', function () {
+Route::get('/stroj', function () {
+
+	return view('stroj');
+});
 
 
-})->middleware('auth');
+Route::get('/strojevi', 'StrojController@index');
 
 
 Auth::routes();
