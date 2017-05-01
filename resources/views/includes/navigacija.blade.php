@@ -16,8 +16,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Strojevi <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="strojevi">Pregledaj</a></li>
-                <li><a href="stroj">Dodaj</a></li>
+                <li><a href="/strojevi">Pregledaj</a></li>
+                <li><a href="/stroj">Dodaj</a></li>
               </ul>
             </li>
             <li><a href="/skladista">Skladišta</a></li>

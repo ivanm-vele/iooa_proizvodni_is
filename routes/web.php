@@ -18,10 +18,11 @@ Route::get('/', function () {
     return view('izbornik');
 });
 
-Route::get('/stroj', function () {
+Route::get('/stroj', 'StrojController@create');
 
-	return view('stroj');
-});
+Route::get('/stroj/{id}', 'StrojController@show');
+
+Route::post('/stroj', 'StrojController@store');
 
 
 Route::get('/strojevi', 'StrojController@index');

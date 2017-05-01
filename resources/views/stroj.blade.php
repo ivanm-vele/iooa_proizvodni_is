@@ -31,19 +31,39 @@
     <div class="container">
         <div class="row">
 
-         <form class="form-horizontal">
+         <form method="POST" role="form" class="form-horizontal">
+            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Naziv Stroja</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Naziv" name="naziv" value="{{ $stroj->naziv or '' }}">
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Sign in</button>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Opis Stroja</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Opis" name="opis" value="{{ $stroj->opis or '' }}">
             </div>
           </div>
+
+
+        @if (isset($stroj))
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Spremi</button>
+            </div>
+          </div>
+        @else
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Dodaj</button>
+            </div>
+          </div>
+        @endif
+
+
+
         </form>
 
         </div>

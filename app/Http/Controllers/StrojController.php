@@ -15,11 +15,7 @@ class StrojController extends Controller
     public function index()
     {
         $strojevi = Stroj::all();
-
-
-
         error_log('Strojevi = ' .$strojevi);
-
         return view('strojevi', ['strojevi' => $strojevi]);
     }
 
@@ -30,7 +26,7 @@ class StrojController extends Controller
      */
     public function create()
     {
-        //
+        return view('stroj');
     }
 
     /**
@@ -41,7 +37,11 @@ class StrojController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $stroj = new Stroj;
+        $stroj->naziv = $request->naziv;
+        $stroj->opis = $request->opis;
+        $stroj->save();
+        return redirect()->action('StrojController@index');
     }
 
     /**
@@ -50,9 +50,10 @@ class StrojController extends Controller
      * @param  \iooa_proizvodni_is\Stroj  $stroj
      * @return \Illuminate\Http\Response
      */
-    public function show(Stroj $stroj)
+    public function show(Stroj $stroj, $id)
     {
-        //
+        $stroj = Stroj::find($id);
+        return view('stroj', ['stroj' => $stroj]);
     }
 
     /**
