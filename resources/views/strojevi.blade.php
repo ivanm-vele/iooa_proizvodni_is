@@ -34,21 +34,22 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Kreirano</th>
         <th>Naziv Stroja</th>
-        <th>Naziv</th>
         <th>Opis</th>
+        <th>Predmet proizvodnje</th>
+        <th>Kreirano</th>
       </tr>
     </thead>
     <tbody>
       
+
         @foreach ($strojevi as $stroj)
           <tr class="href-row" href="/stroj/{{ $stroj->id }}">
             <td> {{ $stroj->id }} </td>
-            <td><span class="badge"> {{ $stroj->created_at }}</span></td>
-            <td><a href="/stroj/{{ $stroj->id }}">Link</a></td>
-            <td>{{ $stroj->naziv }}</td>
+            <td><a href="/stroj/{{ $stroj->id }}">{{ $stroj->naziv }}</a></td>
             <td>{{ $stroj->opis }}</td>
+            <td>{{ $stroj->proizvod->naziv }}</td>
+            <td><span class="badge"> {{ $stroj->created_at }}</span></td>
           </tr>  
       @endforeach
 

@@ -54,6 +54,7 @@
             <label for="inputEmail3" class="col-sm-2 control-label">Proizvodnja:</label>
                 <div class="col-sm-10">
                   <select class="form-control" name="proizvod_id">
+                      <option value=""></option>
                       @foreach($proizvodi as $proizvod)
                        <option value="{{ $proizvod->id }}" {{ $stroj->proizvod_id == $proizvod->id  ? "selected='true'" : "" }} >{{ $proizvod->naziv }}</option>
                       @endforeach
