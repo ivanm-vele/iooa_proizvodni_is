@@ -43,7 +43,7 @@
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Opis Stroja</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Opis" name="opis" value="{{ $stroj->opis or '' }}">
+              <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis" rows="4" cols="50">{{ $stroj->opis or '' }}</textarea>
             </div>
           </div>
 

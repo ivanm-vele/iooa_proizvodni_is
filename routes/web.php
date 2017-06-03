@@ -19,11 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/stroj', 'StrojController@create');
-
 Route::get('/stroj/{id}', 'StrojController@show');
-
 Route::post('/stroj', 'StrojController@store');
-
+Route::post('/stroj/{id}', 'StrojController@update');
 
 Route::get('/strojevi', 'StrojController@index');
 

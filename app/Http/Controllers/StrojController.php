@@ -76,7 +76,12 @@ class StrojController extends Controller
      */
     public function update(Request $request, Stroj $stroj)
     {
-        //
+        
+        $stroj->naziv = $request->naziv;
+        $stroj->opis = $request->opis;
+        $stroj->save();
+
+        return redirect()->action('StrojController@index');
     }
 
     /**
