@@ -3,6 +3,7 @@
 namespace iooa_proizvodni_is\Http\Controllers;
 
 use iooa_proizvodni_is\Stroj;
+use iooa_proizvodni_is\Proizvod;
 use Illuminate\Http\Request;
 
 class StrojController extends Controller
@@ -40,6 +41,7 @@ class StrojController extends Controller
         $stroj = new Stroj;
         $stroj->naziv = $request->naziv;
         $stroj->opis = $request->opis;
+        $stroj->proizvod_id = $request->proizvod_id;
         $stroj->save();
         return redirect()->action('StrojController@index');
     }
@@ -53,7 +55,8 @@ class StrojController extends Controller
     public function show(Stroj $stroj, $id)
     {
         $stroj = Stroj::find($id);
-        return view('stroj', ['stroj' => $stroj]);
+        $proizvodi = Proizvod::all();
+        return view('stroj', ['stroj' => $stroj, 'proizvodi' => $proizvodi]);
     }
 
     /**
@@ -77,8 +80,10 @@ class StrojController extends Controller
     public function update(Request $request, Stroj $stroj)
     {
         
+        $stroj = Stroj::find($request->id);
         $stroj->naziv = $request->naziv;
         $stroj->opis = $request->opis;
+        $stroj->proizvod_id = $request->proizvod_id;
         $stroj->save();
 
         return redirect()->action('StrojController@index');

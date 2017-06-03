@@ -32,6 +32,9 @@
         <div class="row">
 
          <form method="POST" role="form" class="form-horizontal">
+
+            <input hidden name="id" value="{{ $stroj->id or '' }}">
+
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
           <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Naziv Stroja</label>
@@ -40,13 +43,23 @@
             </div>
           </div>
 
-        <div class="form-group">
+          <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Opis Stroja</label>
             <div class="col-sm-10">
               <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis" rows="4" cols="50">{{ $stroj->opis or '' }}</textarea>
             </div>
           </div>
 
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Proizvodnja:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" name="proizvod_id">
+                      @foreach($proizvodi as $proizvod)
+                       <option value="{{ $proizvod->id }}" {{ $stroj->proizvod_id == $proizvod->id  ? "selected='true'" : "" }} >{{ $proizvod->naziv }}</option>
+                      @endforeach
+                  </select>
+                </div>
+          </div>
 
         @if (isset($stroj))
           <div class="form-group">
