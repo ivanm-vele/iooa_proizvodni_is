@@ -28,7 +28,11 @@
     @include('includes/navigacija')
 
     <div class="container">
+
 <div class="row">
+
+<h3>Pregled strojeva</h3>
+<br><br>
 
   <table class="table table-condensed table-hover">
     <thead>

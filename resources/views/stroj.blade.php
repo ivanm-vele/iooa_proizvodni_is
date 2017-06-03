@@ -31,6 +31,14 @@
     <div class="container">
         <div class="row">
 
+@if (isset($stroj))
+<h3>Pregled stroja #{{ $stroj->id }}</h3>
+<br><br>
+@else
+<h3>Izrada novog stroja</h3>
+<br><br>
+@endif
+
          <form method="POST" role="form" class="form-horizontal">
 
             <input hidden name="id" value="{{ $stroj->id or '' }}">
