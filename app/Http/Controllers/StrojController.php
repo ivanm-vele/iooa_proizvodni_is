@@ -27,7 +27,8 @@ class StrojController extends Controller
      */
     public function create()
     {
-        return view('stroj');
+        $proizvodi = Proizvod::all();
+        return view('stroj', ['proizvodi' => $proizvodi]);
     }
 
     /**

@@ -56,7 +56,7 @@
                   <select class="form-control" name="proizvod_id">
                       <option value=""></option>
                       @foreach($proizvodi as $proizvod)
-                       <option value="{{ $proizvod->id }}" {{ $stroj->proizvod_id == $proizvod->id  ? "selected='true'" : "" }} >{{ $proizvod->naziv }}</option>
+                       <option value="{{ $proizvod->id }}" {{ isset($stroj) && $stroj->proizvod_id == $proizvod->id  ? "selected='true'" : "" }} >{{ $proizvod->naziv }}</option>
                       @endforeach
                   </select>
                 </div>
