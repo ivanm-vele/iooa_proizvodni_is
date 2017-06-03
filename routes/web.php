@@ -13,19 +13,19 @@
 use Illuminate\Support\Facades\DB;
 
 
+Route::get('/', 'NaslovnaController@index');
 
-Route::get('/', function () {
-    return view('izbornik');
-});
-
+Route::get('/strojevi', 'StrojController@index');
 Route::get('/stroj', 'StrojController@create');
 Route::get('/stroj/{id}', 'StrojController@show');
 Route::post('/stroj', 'StrojController@store');
 Route::post('/stroj/{id}', 'StrojController@update');
 
-Route::get('/strojevi', 'StrojController@index');
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/logout', '\iooa_proizvodni_is\Http\Controllers\Auth\LoginController@logout');

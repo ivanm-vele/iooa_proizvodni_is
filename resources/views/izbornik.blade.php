@@ -29,8 +29,10 @@
  
     <div class="container">
         <div class="row">
-
-          
+ <h3>Informacijski sustav za upravljanje i nadzor proizvodnje</h3>
+ <br>
+<img src="img/manufacturing.jpg" style="width:500px; height:auto; margin-left:auto; margin-right:auto;" >
+         
         </div>
     </div><!-- /.container -->
 
