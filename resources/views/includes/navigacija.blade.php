@@ -12,14 +12,19 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
+
+
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Radnici <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/radnici">Pregledaj</a></li>
-                <li><a href="/radnik">Dodaj</a></li>
+                @if ( Auth::user()->uloga_id != 3)
+                  <li><a href="/radnik">Dodaj</a></li>
+                @endif
               </ul>
             </li>
 
+          @if ( Auth::user()->uloga_id == 1)
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Proizvodi <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -27,22 +32,31 @@
                 <li><a href="/proizvod">Dodaj</a></li>
               </ul>
             </li>
+          @endif
 
+          @if ( Auth::user()->uloga_id == 1 or Auth::user()->uloga_id == 2)
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Strojevi <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/strojevi">Pregledaj</a></li>
-                <li><a href="/stroj">Dodaj</a></li>
+                @if ( Auth::user()->uloga_id == 1)
+                 <li><a href="/stroj">Dodaj</a></li>
+                @endif
               </ul>
             </li>
+          @endif
 
+          @if ( Auth::user()->uloga_id == 1 or Auth::user()->uloga_id == 2)                
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Skladišta <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/skladista">Pregledaj</a></li>
-                <li><a href="/skladiste">Dodaj</a></li>
+                @if ( Auth::user()->uloga_id == 1)
+                 <li><a href="/skladiste">Dodaj</a></li>
+                @endif
               </ul>
             </li>
+          @endif
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Izvješća <span class="caret"></span></a>
@@ -52,6 +66,7 @@
               </ul>
             </li>
 
+          @if ( Auth::user()->uloga_id == 1)
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Postavke <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -60,6 +75,7 @@
                 <li><a href="/opcije">Pomoć</a></li>
               </ul>
             </li>
+          @endif
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>

@@ -31,55 +31,39 @@
     <div class="container">
         <div class="row">
 
-@if (isset($radnik))
-<h3>Uređivanje radnika #{{ $radnik->id }}</h3>
+@if (isset($user))
+<h3>Uređivanje korisnika #{{ $user->id }}</h3>
 <br><br>
 @else
-<h3>Izrada novog radnika</h3>
+<h3>Izrada novog korisnika</h3>
 <br><br>
 @endif
 
          <form method="POST" role="form" class="form-horizontal">
 
-            <input hidden name="id" value="{{ $radnik->id or '' }}">
+            <input hidden name="id" value="{{ $user->id or '' }}">
 
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-
           <div class="form-group">
-            <label for="Ime" class="col-sm-2 control-label">Ime</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Korisničko ime</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="Ime" placeholder="Ime" name="ime" value="{{ $radnik->ime or '' }}">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Naziv" name="name" value="{{ $user->name or '' }}">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="Prezme" class="col-sm-2 control-label">Prezme</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="Prezme" placeholder="Prezime" name="prezime" value="{{ $radnik->prezime or '' }}">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="Uloga" class="col-sm-2 control-label">Uloga</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="Uloga" placeholder="Uloga" name="uloga" value="{{ $radnik->uloga or '' }}">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Stroj:</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Uloga:</label>
                 <div class="col-sm-10">
-                  <select class="form-control" name="stroj_id">
+                  <select class="form-control" name="uloga_id">
                       <option value=""></option>
-                      @foreach($strojevi as $stroj)
-                       <option value="{{ $stroj->id }}" {{ isset($radnik) && $stroj->id == $radnik->stroj_id  ? "selected='true'" : "" }} >{{ $stroj->naziv }} - {{ $stroj->opis }}</option>
+                      @foreach($uloge as $uloga)
+                       <option value="{{ $uloga->id }}" {{ isset($user) && $user->uloga_id == $uloga->id  ? "selected='true'" : "" }} >{{ $uloga->naziv }}</option>
                       @endforeach
                   </select>
                 </div>
           </div>
-          
-      @if ( Auth::user()->uloga_id != 3)
-        @if (isset($radnik))
+
+        @if (isset($user))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-default">Spremi</button>
@@ -92,7 +76,7 @@
             </div>
           </div>
         @endif
-      @endif
+
 
 
         </form>

@@ -70,6 +70,7 @@
                 </div>
           </div>
 
+      @if ( Auth::user()->uloga_id == 1)
         @if (isset($stroj))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -83,7 +84,7 @@
             </div>
           </div>
         @endif
-
+      @endif
 
 
         </form>
