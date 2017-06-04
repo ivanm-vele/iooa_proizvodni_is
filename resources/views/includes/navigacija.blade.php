@@ -71,8 +71,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Postavke <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/users">Korisnici</a></li>
-                <li><a href="/opcije">Opcije</a></li>
-                <li><a href="/opcije">Pomoć</a></li>
+                <!--<li><a href="/opcije">Opcije</a></li>-->
+                <!--<li><a href="/opcije">Pomoć</a></li>-->
               </ul>
             </li>
           @endif
