@@ -40,7 +40,7 @@
         <th>#</th>
         <th>Ime</th>
         <th>Prezime</th>
-        <th>Uloga</th>
+        <th>Radna uloga</th>
         <th>Zaduženi stroj</th>
         <th>Kreiran</th>
       </tr>

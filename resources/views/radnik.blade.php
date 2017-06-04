@@ -60,7 +60,7 @@
           </div>
 
           <div class="form-group">
-            <label for="Uloga" class="col-sm-2 control-label">Uloga</label>
+            <label for="Uloga" class="col-sm-2 control-label">Radna uloga</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="Uloga" placeholder="Uloga" name="uloga" value="{{ $radnik->uloga or '' }}">
             </div>
