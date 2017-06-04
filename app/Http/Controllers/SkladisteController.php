@@ -46,7 +46,6 @@ class SkladisteController extends Controller
         $skladiste = new Skladiste;
         $skladiste->naziv = $request->naziv;
         $skladiste->opis = $request->opis;
-        $skladiste->proizvod_id = $request->proizvod_id;
         $skladiste->save();
         return redirect()->action('SkladisteController@index');
     }
@@ -87,7 +86,6 @@ class SkladisteController extends Controller
         $skladiste = Skladiste::find($request->id);
         $skladiste->naziv = $request->naziv;
         $skladiste->opis = $request->opis;
-        $skladiste->proizvod_id = $request->proizvod_id;
         $skladiste->save();
 
         return redirect()->action('SkladisteController@index');

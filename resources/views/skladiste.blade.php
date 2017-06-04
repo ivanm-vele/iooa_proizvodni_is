@@ -31,46 +31,34 @@
     <div class="container">
         <div class="row">
 
-@if (isset($stroj))
-<h3>Uređivanje stroja #{{ $stroj->id }}</h3>
+@if (isset($skladiste))
+<h3>Uređivanje skladišta #{{ $skladiste->id }}</h3>
 <br><br>
 @else
-<h3>Izrada novog stroja</h3>
+<h3>Izrada novog skladišta</h3>
 <br><br>
 @endif
 
          <form method="POST" role="form" class="form-horizontal">
 
-            <input hidden name="id" value="{{ $stroj->id or '' }}">
+            <input hidden name="id" value="{{ $skladiste->id or '' }}">
 
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Naziv Stroja</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Naziv Skladišta</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Naziv" name="naziv" value="{{ $stroj->naziv or '' }}">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Naziv" name="naziv" value="{{ $skladiste->naziv or '' }}">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Opis Stroja</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Opis Skladišta</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis" rows="4" cols="50">{{ $stroj->opis or '' }}</textarea>
+              <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis" rows="4" cols="50">{{ $skladiste->opis or '' }}</textarea>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Proizvodnja:</label>
-                <div class="col-sm-10">
-                  <select class="form-control" name="proizvod_id">
-                      <option value=""></option>
-                      @foreach($proizvodi as $proizvod)
-                       <option value="{{ $proizvod->id }}" {{ isset($stroj) && $stroj->proizvod_id == $proizvod->id  ? "selected='true'" : "" }} >{{ $proizvod->naziv }}</option>
-                      @endforeach
-                  </select>
-                </div>
-          </div>
-
-        @if (isset($stroj))
+        @if (isset($skladiste))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-default">Spremi</button>
