@@ -3,6 +3,7 @@
 namespace iooa_proizvodni_is\Http\Controllers;
 
 use iooa_proizvodni_is\Radnik;
+use iooa_proizvodni_is\Stroj;
 use Illuminate\Http\Request;
 
 class RadnikController extends Controller
@@ -32,7 +33,8 @@ class RadnikController extends Controller
      */
     public function create()
     {
-        return view('radnik');
+        $strojevi = Stroj::all();
+        return view('radnik', ['strojevi' => $strojevi]);
     }
 
     /**
@@ -47,6 +49,7 @@ class RadnikController extends Controller
         $radnik->ime = $request->ime;
         $radnik->prezime = $request->prezime;
         $radnik->uloga = $request->uloga;
+        $radnik->stroj_id = $request->stroj_id;
         $radnik->save();
         return redirect()->action('RadnikController@index');
     }
@@ -60,7 +63,8 @@ class RadnikController extends Controller
     public function show(Radnik $radnik, $id)
     {
         $radnik = Radnik::find($id);
-        return view('radnik', ['radnik' => $radnik]);
+        $strojevi = Stroj::all();
+        return view('radnik', ['radnik' => $radnik, 'strojevi' => $strojevi]);
     }
 
     /**
@@ -88,6 +92,7 @@ class RadnikController extends Controller
         $radnik->ime = $request->ime;
         $radnik->prezime = $request->prezime;
         $radnik->uloga = $request->uloga;
+        $radnik->stroj_id = $request->stroj_id;
         $radnik->save();
 
         return redirect()->action('RadnikController@index');

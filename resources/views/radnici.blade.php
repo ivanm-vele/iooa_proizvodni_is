@@ -54,7 +54,7 @@
             <td><a href="/radnik/{{ $radnik->id }}">{{ $radnik->ime }}</a></td>
             <td><a href="/radnik/{{ $radnik->id }}">{{ $radnik->prezime }}</a></td>
             <td>{{ $radnik->uloga }}</td>
-            <td>N/A</td>
+            <td>{{ $radnik->stroj->naziv }} - {{ $radnik->stroj->opis }}</td>
             <td><span class="badge"> {{ $radnik->created_at }}</span></td>
           </tr>  
       @endforeach

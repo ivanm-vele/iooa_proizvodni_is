@@ -66,7 +66,18 @@
             </div>
           </div>
 
-+ Stroj
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Stroj:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" name="stroj_id">
+                      <option value=""></option>
+                      @foreach($strojevi as $stroj)
+                       <option value="{{ $stroj->id }}" {{ isset($radnik) && $stroj->id == $radnik->stroj_id  ? "selected='true'" : "" }} >{{ $stroj->naziv }} - {{ $stroj->opis }}</option>
+                      @endforeach
+                  </select>
+                </div>
+          </div>
+          
         @if (isset($radnik))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
