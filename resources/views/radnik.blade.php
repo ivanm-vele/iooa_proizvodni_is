@@ -53,7 +53,7 @@
           </div>
 
           <div class="form-group">
-            <label for="Prezme" class="col-sm-2 control-label">Prezme</label>
+            <label for="Prezime" class="col-sm-2 control-label">Prezime</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="Prezme" placeholder="Prezime" name="prezime" value="{{ $radnik->prezime or '' }}">
             </div>
