@@ -5,6 +5,8 @@ namespace iooa_proizvodni_is\Http\Controllers;
 use iooa_proizvodni_is\Izvjesce;
 use iooa_proizvodni_is\IzvjesceTip;
 use iooa_proizvodni_is\Stroj;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class IzvjesceController extends Controller
@@ -55,6 +57,7 @@ class IzvjesceController extends Controller
         $izvjesce->komada_proizvedeno = $request->komada_proizvedeno;
         $izvjesce->komada_skarta = $request->komada_skarta;
         $izvjesce->minuta_izvan_pogona = $request->minuta_izvan_pogona;
+        $izvjesce->user_id = Auth::id();
         $izvjesce->save();
         return redirect()->action('IzvjesceController@index');
     }
@@ -102,6 +105,7 @@ class IzvjesceController extends Controller
         $izvjesce->komada_proizvedeno = $request->komada_proizvedeno;
         $izvjesce->komada_skarta = $request->komada_skarta;
         $izvjesce->minuta_izvan_pogona = $request->minuta_izvan_pogona;
+        $izvjesce->user_id = Auth::id();
         $izvjesce->save();
         return redirect()->action('IzvjesceController@index');
     }
