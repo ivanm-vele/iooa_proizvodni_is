@@ -45,7 +45,6 @@ class ProizvodController extends Controller
         $proizvod = new Proizvod;
         $proizvod->naziv = $request->naziv;
         $proizvod->opis = $request->opis;
-        $proizvod->proizvod_id = $request->proizvod_id;
         $proizvod->save();
         return redirect()->action('ProizvodController@index');
     }
@@ -86,7 +85,6 @@ class ProizvodController extends Controller
         $proizvod = Proizvod::find($request->id);
         $proizvod->naziv = $request->naziv;
         $proizvod->opis = $request->opis;
-        $proizvod->proizvod_id = $request->proizvod_id;
         $proizvod->save();
 
         return redirect()->action('ProizvodController@index');
