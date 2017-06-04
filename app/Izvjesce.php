@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Izvjesce extends Model
 {
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'izvjesce';
+
      /*
      * Tip izvješća pripada Izvješću
      */

@@ -12,6 +12,6 @@ class IzvjesceTip extends Model
      *
      * @var string
      */
-    protected $table = 'izvjesce_tips';
+    protected $table = 'izvjesce_tip';
 
 }

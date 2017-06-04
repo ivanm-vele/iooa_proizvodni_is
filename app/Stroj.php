@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stroj extends Model
 {
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'stroj';
+
      /*
      * Proizvod pripada stroju
      */

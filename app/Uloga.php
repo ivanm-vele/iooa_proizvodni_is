@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Uloga extends Model
 {
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'uloga';
 
 }
