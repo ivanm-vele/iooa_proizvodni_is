@@ -45,6 +45,11 @@ Route::get('/izvjesce/{id}', 'IzvjesceController@show');
 Route::post('/izvjesce', 'IzvjesceController@store');
 Route::post('/izvjesce/{id}', 'IzvjesceController@update');
 
+Route::get('/users', 'UserController@index');
+Route::get('/user', 'UserController@create');
+Route::get('/user/{id}', 'UserController@show');
+Route::post('/user', 'UserController@store');
+Route::post('/user/{id}', 'UserController@update');
 
 Auth::routes();
 

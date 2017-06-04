@@ -7,6 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    public function uloga()
+    {
+        return $this->belongsTo('iooa_proizvodni_is\Uloga');
+    }
+
     use Notifiable;
 
     /**
