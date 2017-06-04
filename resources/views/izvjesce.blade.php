@@ -31,46 +31,80 @@
     <div class="container">
         <div class="row">
 
-@if (isset($stroj))
-<h3>Uređivanje stroja #{{ $stroj->id }}</h3>
+@if (isset($izvjesce))
+<h3>Uređivanje izvještaja #{{ $izvjesce->id }}</h3>
 <br><br>
 @else
-<h3>Izrada novog stroja</h3>
+<h3>Izrada novog izvještaja</h3>
 <br><br>
 @endif
 
          <form method="POST" role="form" class="form-horizontal">
 
-            <input hidden name="id" value="{{ $stroj->id or '' }}">
+            <input hidden name="id" value="{{ $izvjesce->id or '' }}">
 
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Naziv Stroja</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Komada proizvedeno</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Naziv" name="naziv" value="{{ $stroj->naziv or '' }}">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="0" name="komada_proizvedeno" value="{{ $izvjesce->komada_proizvedeno or '' }}">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Opis Stroja</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Komada škarta</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis" rows="4" cols="50">{{ $stroj->opis or '' }}</textarea>
+              <input type="text" class="form-control" id="inputEmail3" placeholder="0" name="komada_skarta" value="{{ $izvjesce->komada_skarta or '' }}">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Proizvodnja:</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">Minuta izvan pogona</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="0" name="minuta_izvan_pogona" value="{{ $izvjesce->minuta_izvan_pogona or '' }}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Opis Izvješća</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis" rows="4" cols="50">{{ $izvjesce->opis or '' }}</textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Opis Kvarova</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="inputEmail3" placeholder="Opis" name="opis_kvarovi" rows="4" cols="50">{{ $izvjesce->opis_kvarovi or '' }}</textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Tip:</label>
                 <div class="col-sm-10">
-                  <select class="form-control" name="proizvod_id">
+                  <select class="form-control" name="izvjesce_tip_id">
                       <option value=""></option>
-                      @foreach($proizvodi as $proizvod)
-                       <option value="{{ $proizvod->id }}" {{ isset($stroj) && $stroj->proizvod_id == $proizvod->id  ? "selected='true'" : "" }} >{{ $proizvod->naziv }}</option>
+                      @foreach($tipovi_izvjesca as $tip)
+                       <option value="{{ $tip->id }}" {{ isset($izvjesce) && $tip->id == $izvjesce->izvjesce_tip_id  ? "selected='true'" : "" }} >{{ $tip->naziv }}</option>
                       @endforeach
                   </select>
                 </div>
           </div>
 
-        @if (isset($stroj))
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Stroj:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" name="stroj_id">
+                      <option value=""></option>
+                      @foreach($strojevi as $stroj)
+                       <option value="{{ $stroj->id }}" {{ isset($izvjesce) && $stroj->id == $izvjesce->stroj_id  ? "selected='true'" : "" }} >{{ $stroj->naziv }} - {{ $stroj->opis }}</option>
+                      @endforeach
+                  </select>
+                </div>
+          </div>
+
+        @if (isset($izvjesce))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-default">Spremi</button>

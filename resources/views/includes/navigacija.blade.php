@@ -47,8 +47,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Izvješća <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="izvjesca">Pregledaj</a></li>
-                <li><a href="izvjesce">Podnesi</a></li>
+                <li><a href="/izvjesca">Pregledaj</a></li>
+                <li><a href="/izvjesce">Podnesi</a></li>
               </ul>
             </li>
 
@@ -56,15 +56,15 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Postavke <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="korisnici">Korisnici</a></li>
-                <li><a href="opcije">Opcije</a></li>
-                <li><a href="opcije">Pomoć</a></li>
+                <li><a href="/opcije">Opcije</a></li>
+                <li><a href="/opcije">Pomoć</a></li>
               </ul>
             </li>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Profil <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="logout">Odjava</a></li>
+                <li><a href="/logout">Odjava</a></li>
               </ul>
             </li>
 

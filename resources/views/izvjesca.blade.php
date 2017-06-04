@@ -31,29 +31,25 @@
 
 <div class="row">
 
-<h3>Pregled strojeva</h3>
+<h3>Pregled izvješća</h3>
 <br><br>
 
   <table class="table table-condensed table-hover">
     <thead>
       <tr>
         <th>#</th>
-        <th>Naziv Stroja</th>
-        <th>Opis</th>
-        <th>Predmet proizvodnje</th>
+        <th>Tip Izvješća</th>
         <th>Kreirano</th>
       </tr>
     </thead>
     <tbody>
       
 
-        @foreach ($strojevi as $stroj)
-          <tr class="href-row" href="/stroj/{{ $stroj->id }}">
-            <td> {{ $stroj->id }} </td>
-            <td><a href="/stroj/{{ $stroj->id }}">{{ $stroj->naziv }}</a></td>
-            <td>{{ $stroj->opis }}</td>
-            <td>{{ $stroj->proizvod->naziv }}</td>
-            <td><span class="badge"> {{ $stroj->created_at }}</span></td>
+        @foreach ($izvjesca as $izvjesce)
+          <tr class="href-row" href="/izvjesce/{{ $izvjesce->id }}">
+            <td> {{ $izvjesce->id }} </td>
+            <td><a href="/izvjesce/{{ $izvjesce->id }}"> {{ $izvjesce->izvjesceTip->naziv }}</a></td>
+            <td><span class="badge"> {{ $izvjesce->created_at }}</span></td>
           </tr>  
       @endforeach
 

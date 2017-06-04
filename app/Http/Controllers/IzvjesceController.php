@@ -3,6 +3,8 @@
 namespace iooa_proizvodni_is\Http\Controllers;
 
 use iooa_proizvodni_is\Izvjesce;
+use iooa_proizvodni_is\IzvjesceTip;
+use iooa_proizvodni_is\Stroj;
 use Illuminate\Http\Request;
 
 class IzvjesceController extends Controller
@@ -32,7 +34,9 @@ class IzvjesceController extends Controller
      */
     public function create()
     {
-        return view('izvjesce');
+        $tipovi_izvjesca = IzvjesceTip::all();
+        $strojevi = Stroj::all();
+        return view('izvjesce', ['tipovi_izvjesca' => $tipovi_izvjesca, 'strojevi' => $strojevi]);
     }
 
     /**
@@ -44,9 +48,13 @@ class IzvjesceController extends Controller
     public function store(Request $request)
     {
         $izvjesce = new Izvjesce;
-        $izvjesce->naziv = $request->naziv;
+        $izvjesce->opis_kvarovi = $request->opis_kvarovi;
         $izvjesce->opis = $request->opis;
-        $izvjesce->proizvod_id = $request->proizvod_id;
+        $izvjesce->stroj_id = $request->stroj_id;
+        $izvjesce->izvjesce_tip_id = $request->izvjesce_tip_id;   
+        $izvjesce->komada_proizvedeno = $request->komada_proizvedeno;
+        $izvjesce->komada_skarta = $request->komada_skarta;
+        $izvjesce->minuta_izvan_pogona = $request->minuta_izvan_pogona;
         $izvjesce->save();
         return redirect()->action('IzvjesceController@index');
     }
@@ -60,7 +68,9 @@ class IzvjesceController extends Controller
     public function show(Izvjesce $izvjesce, $id)
     {
         $izvjesce = Izvjesce::find($id);
-        return view('izvjesce', ['izvjesce' => $izvjesce]);
+        $tipovi_izvjesca = IzvjesceTip::all();
+        $strojevi = Stroj::all();
+        return view('izvjesce', ['izvjesce' => $izvjesce, 'tipovi_izvjesca' => $tipovi_izvjesca, 'strojevi' => $strojevi]);
     }
 
     /**
@@ -85,11 +95,14 @@ class IzvjesceController extends Controller
     {
         
         $izvjesce = Izvjesce::find($request->id);
-        $izvjesce->naziv = $request->naziv;
+        $izvjesce->opis_kvarovi = $request->opis_kvarovi;
         $izvjesce->opis = $request->opis;
-        $izvjesce->proizvod_id = $request->proizvod_id;
+        $izvjesce->stroj_id = $request->stroj_id;
+        $izvjesce->izvjesce_tip_id = $request->izvjesce_tip_id;   
+        $izvjesce->komada_proizvedeno = $request->komada_proizvedeno;
+        $izvjesce->komada_skarta = $request->komada_skarta;
+        $izvjesce->minuta_izvan_pogona = $request->minuta_izvan_pogona;
         $izvjesce->save();
-
         return redirect()->action('IzvjesceController@index');
     }
 
