@@ -99,8 +99,14 @@
                 <td>Listanje, pregled, uređivanje</td>
               </tr>
               <tr>
+                <td>Inventar</td>
+                <td>X</td>
+                <td>Listanje, pregled, uređivanje</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+              <tr>
                 <td>Izvješća</td>
-                <td>Listanje, pregled, uređivanje - samo "dnevno stanje proizvodnje"</td>
+                <td>Listanje, pregled i uređivanje za samo "dnevno stanje proizvodnje"</td>
                 <td>Listanje, pregled, uređivanje</td>
                 <td>Listanje, pregled, uređivanje</td>
               </tr>
