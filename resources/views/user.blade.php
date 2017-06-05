@@ -118,9 +118,29 @@
               </tr>
             </tbody>
           </table>
+
+        <ul>
+          <li><b>Radnik</b> = Zaposlenik sa operativnim funkcijama na razini stroja</li>
+          <ul>
+              <li>Jedina interakcija sa IS-om za kreiranje dnevnih izvješća proizvodnje</li>
+          </ul>
+          <li><b>Tehnolog</b> = Zaposlenik za nadzornim i upravljačkim funkcijama na razini manjeg segmenta proizvodnje</li>
+          <ul>
+              <li>Ispunjava i provjerava izvješća</li>
+              <li>Upravlja rasporedom radne snage i strojeva</li>
+              <li>Provodi evidenciju protoka robe</li>
+          </ul>
+          <li><b>Upravitelj</b> = Nadzire cijeli IS, ima uvid i sposobnost promjena za sve informacijske elemente proizvodnje</li>
+            <ul>
+              <li>Apsolutna kontrola nad informacijskim sustavom</li>
+              <li>Jedini posjeduje kontrolu nad dodjeljivanjem uloga korisnicima u informacijskom sustavu</li>
+          </ul>
+        </ul>
+<br><br>
+
         </div>
 
-
+        
         @if (isset($user))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
