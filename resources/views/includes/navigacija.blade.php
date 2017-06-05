@@ -58,6 +58,16 @@
             </li>
           @endif
 
+          @if ( Auth::user()->uloga_id == 1 or Auth::user()->uloga_id == 2)                
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Inventar <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/inventari">Pregledaj</a></li>
+                 <li><a href="/inventar">Dodaj</a></li>
+              </ul>
+            </li>
+          @endif
+
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Izvješća <span class="caret"></span></a>
               <ul class="dropdown-menu">

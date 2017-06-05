@@ -39,6 +39,12 @@ Route::get('/skladiste/{id}', 'SkladisteController@show');
 Route::post('/skladiste', 'SkladisteController@store');
 Route::post('/skladiste/{id}', 'SkladisteController@update');
 
+Route::get('/inventari', 'InventarController@index');
+Route::get('/inventar', 'InventarController@create');
+Route::get('/inventar/{id}', 'InventarController@show');
+Route::post('/inventar', 'InventarController@store');
+Route::post('/inventar/{id}', 'InventarController@update');
+
 Route::get('/izvjesca', 'IzvjesceController@index');
 Route::get('/izvjesce', 'IzvjesceController@create');
 Route::get('/izvjesce/{id}', 'IzvjesceController@show');
