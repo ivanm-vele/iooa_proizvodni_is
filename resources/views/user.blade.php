@@ -100,7 +100,7 @@
               </tr>
               <tr>
                 <td>Izvješća</td>
-                <td>Listanje, pregled, uređivanje</td>
+                <td>Listanje, pregled, uređivanje - samo "dnevno stanje proizvodnje"</td>
                 <td>Listanje, pregled, uređivanje</td>
                 <td>Listanje, pregled, uređivanje</td>
               </tr>
