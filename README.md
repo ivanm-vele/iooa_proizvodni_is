@@ -17,3 +17,12 @@ IS razlikuje tri različite vrste korisnika sa vlastitim privilegijama radnji:
   3) Upravitelj = Nadzire cijeli IS, ima uvid i sposobnost promjena za sve informacijske elemente proizvodnje
       1) Apsolutna kontrola nad informacijskim sustavom
       2) Jedini posjeduje kontrolu nad dodjeljivanjem uloga korisnicima u informacijskom sustavu
+
+Temeljne funkcije IS-a:
+
+1) Postavljanje rasporeda operativnih funkcija radnika za strojevima
+2) Određivanje proizvodnih objekata strojevima
+3) Upravljanje protokom proizvedene robe i skladištenjem
+4) Uvid i podnošenje kontinuiranih izvješća tijekom proizvodnje
+5) Upravljanje strojevima poduzeća
+6) Upravljanje skladištima poduzeća
