@@ -1,6 +1,20 @@
 # iooa_proizvodni_is
 IOOA Proizvodni IS
 
+URL: https://proizvodni-is.herokuapp.com/
+
+Demo login podaci:
+
+Upravitelj<br>
+  Email: upravitelj@poduzece.com<br>
+  Lozinka: upravitelj<br><br>
+Tehnolog:<br>
+  Email: tehnolog@poduzece.com<br>
+  Lozinka: tehnolog<br><br>
+Radnik:<br>
+  Email: radnik@poduzece.com<br>
+  Lozinka: radnik
+
 PHP Web aplikacija izrađena u Laravel frameworku sa MySQL bazom podataka.
 
 Informacijski sustav za upravljanje proizvodnjom prvenstveno namjenjen manjim proizvodnim poduzećima za
