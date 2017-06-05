@@ -51,7 +51,7 @@
             <td> {{ $user->id }} </td>
             <td><a href="/user/{{ $user->id }}">{{ $user->name }}</a></td>
             <td>{{ $user->uloga->naziv or 'Nedodjeljena' }}</td>
-            <td><span class="badge"> {{ $user->created_at }}</span></td>
+            <td><span class="badge"> {{ $user->vrijeme_kreiranja }}</span></td>
           </tr>  
       @endforeach
 

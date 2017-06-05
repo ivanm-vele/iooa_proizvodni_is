@@ -51,7 +51,7 @@
             <td> {{ $proizvod->id }} </td>
             <td><a href="/proizvod/{{ $proizvod->id }}">{{ $proizvod->naziv }}</a></td>
             <td>{{ $proizvod->opis }}</td>
-            <td><span class="badge"> {{ $proizvod->created_at }}</span></td>
+            <td><span class="badge"> {{ $proizvod->vrijeme_kreiranja }}</span></td>
           </tr>  
       @endforeach
 

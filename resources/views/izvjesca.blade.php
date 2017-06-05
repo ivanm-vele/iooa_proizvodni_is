@@ -51,7 +51,7 @@
             <td> {{ $izvjesce->id }} </td>
             <td><a href="/izvjesce/{{ $izvjesce->id }}"> {{ $izvjesce->izvjesceTip->naziv }}</a></td>
             <td>{{ $izvjesce->user->name }}</td>
-            <td><span class="badge"> {{ $izvjesce->created_at }}</span></td>
+            <td><span class="badge"> {{ $izvjesce->vrijeme_kreiranja }}</span></td>
           </tr>  
       @endforeach
 

@@ -53,7 +53,7 @@
             <td><a href="/stroj/{{ $stroj->id }}">{{ $stroj->naziv }}</a></td>
             <td>{{ $stroj->opis }}</td>
             <td>{{ $stroj->proizvod->naziv }}</td>
-            <td><span class="badge"> {{ $stroj->created_at }}</span></td>
+            <td><span class="badge"> {{ $stroj->vrijeme_kreiranja }}</span></td>
           </tr>  
       @endforeach
 
