@@ -63,6 +63,58 @@
                 </div>
           </div>
 
+        <div class="col-sm-10 col-sm-offset-2">
+          <table class="table" style="font-size:12px;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Radnik</th>
+                <th>Tehnolog</th>
+                <th>Upravitelj</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Radnici</td>
+                <td>Listanje, pregled</td>
+                <td>Listanje, pregled, uređivanje</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+              <tr>
+                <td>Proizvodi</td>
+                <td>X</td>
+                <td>Listanje, pregled</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+              <tr>
+                <td>Strojevi</td>
+                <td>X</td>
+                <td>X</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+              <tr>
+                <td>Skladišta</td>
+                <td>X</td>
+                <td>Listanje, pregled</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+              <tr>
+                <td>Izvješća</td>
+                <td>Listanje, pregled, uređivanje</td>
+                <td>Listanje, pregled, uređivanje</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+              <tr>
+                <td>Korisnici</td>
+                <td>X</td>
+                <td>X</td>
+                <td>Listanje, pregled, uređivanje</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
         @if (isset($user))
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
