@@ -50,7 +50,7 @@
       
 
         @foreach ($inventari as $inventar)
-          <tr class="href-row" href="/inventar/{{ $inventar->id }}">
+          <tr class="href-row" href="/inventar/{{ $inventar->id }}" style="{{ $inventar->inventar_radnja_id == 1  ?  "background-color:#dff9d4;" : "background-color:#f9ddd4;" }}">
             <td> {{ $inventar->id }} </td>
             <td><a href="/inventar/{{ $inventar->id }}"> {{ $inventar->inventarRadnja->naziv }}</a></td>
             <td>{{ $inventar->broj_komada }} </td>
