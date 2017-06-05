@@ -79,7 +79,11 @@ class IzvjesceController extends Controller
     public function show(Izvjesce $izvjesce, $id)
     {
         $izvjesce = Izvjesce::find($id);
-        $tipovi_izvjesca = IzvjesceTip::all();
+        if(Auth::user()->uloga_id == 1 || Auth::user()->uloga_id == 2){
+            $tipovi_izvjesca = IzvjesceTip::find([2, 3, 4]);
+        }else{
+            $tipovi_izvjesca = IzvjesceTip::find([3]);
+        }
         $strojevi = Stroj::all();
         return view('izvjesce', ['izvjesce' => $izvjesce, 'tipovi_izvjesca' => $tipovi_izvjesca, 'strojevi' => $strojevi]);
     }
