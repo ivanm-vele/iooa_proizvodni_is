@@ -26,3 +26,5 @@ Temeljne funkcije IS-a:
 4) Uvid i podnošenje kontinuiranih izvješća tijekom proizvodnje
 5) Upravljanje strojevima poduzeća
 6) Upravljanje skladištima poduzeća
+
+![alt text](https://raw.githubusercontent.com/ivanm-vele/iooa_proizvodni_is/master/diagram.png)
